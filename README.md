@@ -1,3 +1,3 @@
 # hello-go
 
-Yet another hello-world Go App :) - Built with [Habitat](https://www.habitat.sh)!
+Yet another hello-world Go App :) - Build with [Habitat](https://www.habitat.sh)!
