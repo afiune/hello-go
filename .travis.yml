@@ -1,0 +1,23 @@
+sudo: enabled
+dist: trusty
+language: generic
+branches:
+  only:
+    - master
+
+before_install:
+  - export HAB_STUDIO_SUP=false
+  - curl https://raw.githubusercontent.com/chef/ci-studio-common/master/install.sh | bash
+  - export PATH="$PATH:$HOME/ci-studio-common/bin:$HOME/tools/bin"
+
+install:
+  - install-tool aws
+  - install-tool hab
+  - aws-configure afiune
+
+script:
+  - hab-verify in-studio integration_test
+
+env:
+  global:
+    - HAB_ORIGIN=afiune

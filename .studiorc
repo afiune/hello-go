@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# This is the place you can extend the funcitonality of the studio
+
+function integration_test() {
+  build
+  source results/last_build.env
+  hab pkg install -b -f results/${pkg_artifact}
+  $pkg_name
+}
